@@ -8,20 +8,20 @@ class Window:
         self.__canvas.pack(fill=BOTH, expand=True)
         self.__running = False
 
-        # Connect the close method to the window's close button
+        
         self.__root.protocol("WM_DELETE_WINDOW", self.close)
 
     def redraw(self):
-        # Update the GUI
         self.__root.update_idletasks()
         self.__root.update()
 
     def wait_for_close(self):
-        # Main loop to keep the window open
         self.__running = True
         while self.__running:
             self.redraw()
 
     def close(self):
-        # Stop the loop when the window is closed
         self.__running = False
+
+    def draw_line(self, line, fill_color="black"):
+        line.draw(self.__canvas, fill_color)
