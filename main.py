@@ -30,8 +30,6 @@ def main():
     root.withdraw() 
     if solved:
         result = messagebox.askyesno("Maze Solved", "Maze solved successfully!\nDo you want to reload?")
-    else:
-        result = messagebox.askyesno("Maze Not Solved", "No solution found for the maze.\nDo you want to reload?")
 
     # Reload or exit based on user's choice
     if result:
